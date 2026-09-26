@@ -1,0 +1,317 @@
+{
+  "cases": {
+    "lake_at_rest": {
+      "case": "lake_at_rest",
+      "dflowfm_log": "<verification-runs>/lake_at_rest/dflowfm_run.log",
+      "dflowfm_returncode": 0,
+      "generated": true,
+      "mdu_path": "<verification-runs>/lake_at_rest/lake_at_rest.mdu",
+      "out_dir": "<verification-runs>/lake_at_rest",
+      "status": "passed",
+      "verify": {
+        "case": "lake_at_rest",
+        "expected_tstop_s": 3600.0,
+        "expected_waterlevel_m": 0.5,
+        "map_path": "<verification-runs>/lake_at_rest/dflowfmoutput/lake_at_rest_map.nc",
+        "max_speed_m_s": 6.390880730044097e-15,
+        "max_waterlevel_drift_m": 1.5765166949677223e-14,
+        "n_times": 13,
+        "passed": true,
+        "velocity_tolerance_m_s": 1e-06,
+        "waterlevel_tolerance_m": 1e-08
+      }
+    },
+    "linear_seiche": {
+      "case": "linear_seiche",
+      "dflowfm_log": "<verification-runs>/linear_seiche/dflowfm_run.log",
+      "dflowfm_returncode": 0,
+      "generated": true,
+      "mdu_path": "<verification-runs>/linear_seiche/linear_seiche.mdu",
+      "out_dir": "<verification-runs>/linear_seiche",
+      "status": "passed",
+      "verify": {
+        "case": "linear_seiche",
+        "depth_m": 5.0,
+        "length_m": 200.0,
+        "map_path": "<verification-runs>/linear_seiche/dflowfmoutput/linear_seiche_map.nc",
+        "n_periods_detected": 5,
+        "passed": true,
+        "period_exact_s": 57.11372491708258,
+        "period_measured_s": 57.23565841544912,
+        "period_relative_error": 0.002134924635778304,
+        "relative_tolerance": 0.02
+      }
+    },
+    "normal_depth_channel": {
+      "case": "normal_depth_channel",
+      "dflowfm_log": "<verification-runs>/normal_depth_channel/dflowfm_run.log",
+      "dflowfm_returncode": 0,
+      "generated": true,
+      "mdu_path": "<verification-runs>/normal_depth_channel/normal_depth_channel.mdu",
+      "out_dir": "<verification-runs>/normal_depth_channel",
+      "status": "passed",
+      "verify": {
+        "case": "normal_depth_channel",
+        "depth_relative_error": 0.01539559929605371,
+        "h0_exact_m": 0.6723118944112408,
+        "interior_window_m": [
+          60.0,
+          140.0
+        ],
+        "map_path": "<verification-runs>/normal_depth_channel/dflowfmoutput/normal_depth_channel_map.nc",
+        "mean_depth_interior_m": 0.6619612498829146,
+        "mean_velocity_interior_m_s": 0.7556788409635773,
+        "passed": true,
+        "relative_tolerance": 0.02,
+        "u0_exact_m_s": 0.7437024454815895,
+        "velocity_relative_error": 0.016103746269426903
+      }
+    },
+    "stoker_dambreak": {
+      "case": "stoker_dambreak",
+      "dflowfm_log": "<verification-runs>/stoker_dambreak/dflowfm_run.log",
+      "dflowfm_returncode": 0,
+      "generated": true,
+      "mdu_path": "<verification-runs>/stoker_dambreak/stoker_dambreak.mdu",
+      "out_dir": "<verification-runs>/stoker_dambreak",
+      "status": "passed",
+      "verify": {
+        "case": "stoker_dambreak",
+        "checks": [
+          {
+            "depth_rms_error_m": 0.011832387042139614,
+            "n_cells_compared": 186,
+            "shock_position_error_dx": 0.012011525866114425,
+            "t_actual_s": 2.0,
+            "t_target_s": 2.0,
+            "velocity_rms_error_m_s": 0.0441925946317401,
+            "x_shock_exact_m": 25.87199711853347,
+            "x_shock_simulated_m": 25.875
+          },
+          {
+            "depth_rms_error_m": 0.01135471684817248,
+            "n_cells_compared": 186,
+            "shock_position_error_dx": 0.6039798297342855,
+            "t_actual_s": 3.5,
+            "t_target_s": 3.5,
+            "velocity_rms_error_m_s": 0.04216178647047264,
+            "x_shock_exact_m": 30.27599495743357,
+            "x_shock_simulated_m": 30.125
+          },
+          {
+            "depth_rms_error_m": 0.010924016134527816,
+            "n_cells_compared": 186,
+            "shock_position_error_dx": 0.21997118533471394,
+            "t_actual_s": 5.0,
+            "t_target_s": 5.0,
+            "velocity_rms_error_m_s": 0.04055873518715721,
+            "x_shock_exact_m": 34.67999279633368,
+            "x_shock_simulated_m": 34.625
+          }
+        ],
+        "field_rms_tolerance_m": 0.02,
+        "h_left_m": 1.0,
+        "h_right_m": 0.3,
+        "map_path": "<verification-runs>/stoker_dambreak/dflowfmoutput/stoker_dambreak_map.nc",
+        "passed": true,
+        "shock_position_tolerance_dx": 4.0,
+        "shock_speed_exact_m_s": 2.935998559266735,
+        "velocity_rms_tolerance_m_s": 0.1
+      }
+    },
+    "thacker_basin": {
+      "case": "thacker_basin",
+      "dflowfm_log": "<verification-runs>/thacker_basin/dflowfm_run.log",
+      "dflowfm_returncode": 0,
+      "generated": true,
+      "mdu_path": "<verification-runs>/thacker_basin/thacker_basin.mdu",
+      "out_dir": "<verification-runs>/thacker_basin",
+      "status": "passed",
+      "verify": {
+        "case": "thacker_basin",
+        "checks": [
+          {
+            "depth_rms_error_m": 0.0059219900517208475,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 3.7422598165618046,
+            "t_actual_s": 0.5,
+            "t_phase_corrected_s": 0.4918380750146724,
+            "t_target_s": 0.5015166701776618,
+            "velocity_rms_error_m_s": 0.02334772610950056,
+            "x1_exact_m": 0.9848451963312361,
+            "x1_simulated_m": 0.91,
+            "x2_exact_m": 2.984845196331236,
+            "x2_simulated_m": 2.95
+          },
+          {
+            "depth_rms_error_m": 0.006167228797887499,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 1.4540663851522528,
+            "t_actual_s": 1.0,
+            "t_phase_corrected_s": 0.9836761500293448,
+            "t_target_s": 1.0030333403553235,
+            "velocity_rms_error_m_s": 0.050100807081534464,
+            "x1_exact_m": 1.499081327703045,
+            "x1_simulated_m": 1.47,
+            "x2_exact_m": 3.499081327703045,
+            "x2_simulated_m": 3.47
+          },
+          {
+            "depth_rms_error_m": 0.009525574063623693,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 4.229563909344702,
+            "t_actual_s": 1.5,
+            "t_phase_corrected_s": 1.4755142250440172,
+            "t_target_s": 1.5045500105329852,
+            "velocity_rms_error_m_s": 0.052492294914542534,
+            "x1_exact_m": 1.0454087218131063,
+            "x1_simulated_m": 1.07,
+            "x2_exact_m": 3.0454087218131063,
+            "x2_simulated_m": 3.1300000000000003
+          },
+          {
+            "depth_rms_error_m": 0.010927691466916196,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 3.3164343323668244,
+            "t_actual_s": 2.0,
+            "t_phase_corrected_s": 1.9673523000586897,
+            "t_target_s": 2.006066680710647,
+            "velocity_rms_error_m_s": 0.04913097613645127,
+            "x1_exact_m": 0.5036713133526636,
+            "x1_simulated_m": 0.5700000000000001,
+            "x2_exact_m": 2.5036713133526636,
+            "x2_simulated_m": 2.5500000000000003
+          },
+          {
+            "depth_rms_error_m": 0.01336055967043116,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 4.72521114908152,
+            "t_actual_s": 2.5,
+            "t_phase_corrected_s": 2.459190375073362,
+            "t_target_s": 2.507583350888309,
+            "velocity_rms_error_m_s": 0.07242714602218576,
+            "x1_exact_m": 0.9245042229816305,
+            "x1_simulated_m": 0.8300000000000001,
+            "x2_exact_m": 2.9245042229816303,
+            "x2_simulated_m": 2.91
+          },
+          {
+            "depth_rms_error_m": 0.016574929195404837,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 4.087609596659969,
+            "t_actual_s": 3.0,
+            "t_phase_corrected_s": 2.9510284500880344,
+            "t_target_s": 3.0091000210659704,
+            "velocity_rms_error_m_s": 0.04893699673287896,
+            "x1_exact_m": 1.4917521919331995,
+            "x1_simulated_m": 1.45,
+            "x2_exact_m": 3.4917521919331995,
+            "x2_simulated_m": 3.41
+          },
+          {
+            "depth_rms_error_m": 0.015552509764746562,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 3.7496985915740577,
+            "t_actual_s": 3.52,
+            "t_phase_corrected_s": 3.462540048103294,
+            "t_target_s": 3.5106166912436323,
+            "velocity_rms_error_m_s": 0.09602427844311241,
+            "x1_exact_m": 1.0750060281685192,
+            "x1_simulated_m": 1.09,
+            "x2_exact_m": 3.075006028168519,
+            "x2_simulated_m": 3.1500000000000004
+          },
+          {
+            "depth_rms_error_m": 0.020159510125808175,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 4.092077954837864,
+            "t_actual_s": 4.02,
+            "t_phase_corrected_s": 3.9543781231179658,
+            "t_target_s": 4.012133361421294,
+            "velocity_rms_error_m_s": 0.04795855199664846,
+            "x1_exact_m": 0.5081584409032427,
+            "x1_simulated_m": 0.59,
+            "x2_exact_m": 2.5081584409032427,
+            "x2_simulated_m": 2.5700000000000003
+          },
+          {
+            "depth_rms_error_m": 0.01626587594340261,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 3.2589460634115053,
+            "t_actual_s": 4.519999999,
+            "t_phase_corrected_s": 4.446216197148963,
+            "t_target_s": 4.513650031598956,
+            "velocity_rms_error_m_s": 0.12151304270770075,
+            "x1_exact_m": 0.8951789212682302,
+            "x1_simulated_m": 0.8300000000000001,
+            "x2_exact_m": 2.89517892126823,
+            "x2_simulated_m": 2.89
+          },
+          {
+            "depth_rms_error_m": 0.021957724897217066,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 3.774369367274888,
+            "t_actual_s": 5.019999999,
+            "t_phase_corrected_s": 4.938054272163635,
+            "t_target_s": 5.015166701776618,
+            "velocity_rms_error_m_s": 0.06489663835531165,
+            "x1_exact_m": 1.485487387345498,
+            "x1_simulated_m": 1.4100000000000001,
+            "x2_exact_m": 3.485487387345498,
+            "x2_simulated_m": 3.41
+          },
+          {
+            "depth_rms_error_m": 0.018087101391168932,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 2.7874528556351974,
+            "t_actual_s": 5.519999999,
+            "t_phase_corrected_s": 5.429892347178308,
+            "t_target_s": 5.516683371954279,
+            "velocity_rms_error_m_s": 0.14019232810422003,
+            "x1_exact_m": 1.1342509428872964,
+            "x1_simulated_m": 1.1300000000000001,
+            "x2_exact_m": 3.1342509428872964,
+            "x2_simulated_m": 3.1900000000000004
+          },
+          {
+            "depth_rms_error_m": 0.02395974193413251,
+            "n_cells_compared": 90,
+            "shoreline_error_dx": 5.367460030914217,
+            "t_actual_s": 6.019999999,
+            "t_phase_corrected_s": 5.92173042219298,
+            "t_target_s": 6.018200042131941,
+            "velocity_rms_error_m_s": 0.09684406627776604,
+            "x1_exact_m": 0.5226507993817158,
+            "x1_simulated_m": 0.61,
+            "x2_exact_m": 2.522650799381716,
+            "x2_simulated_m": 2.6300000000000003
+          }
+        ],
+        "field_rms_tolerance_m": 0.03,
+        "map_path": "<verification-runs>/thacker_basin/dflowfmoutput/thacker_basin_map.nc",
+        "passed": true,
+        "period_exact_s": 2.006066680710647,
+        "period_measured_s": 2.0393568357337957,
+        "period_passed": true,
+        "period_relative_error": 0.01659474001699464,
+        "period_relative_tolerance": 0.03,
+        "shoreline_tolerance_dx": 6.0,
+        "velocity_rms_tolerance_m_s": 0.16
+      }
+    }
+  },
+  "dflowfm_binary": "<workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+  "packages": {
+    "dfm-tools": "0.47.0",
+    "hydrolib-core": "1.0.1",
+    "meshkernel": "8.3.0",
+    "numpy": "2.5.3",
+    "xarray": "2026.7.0",
+    "xugrid": "0.15.3"
+  },
+  "schema_version": 1,
+  "summary": {
+    "all_generated": true,
+    "all_passed": true
+  }
+}

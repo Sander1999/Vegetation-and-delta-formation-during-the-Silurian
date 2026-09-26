@@ -1,0 +1,434 @@
+{
+  "status": "executed_all_stages",
+  "stage_duration_s": 60.0,
+  "hydrodynamic_spinup_s": 60.0,
+  "time_convention": "First stages include hydraulic spin-up followed by stage_duration_s of morphology; restart stages have no repeated spin-up",
+  "method": "Full native restart on an identical grid; prescribed vegetation intervention",
+  "interpretation": "Scenario analogue of the essay sequence, not a calibrated reconstruction",
+  "restart_source_review": {
+    "commit": "01bc2f3e53e2d5319696c5ed2b8a74f5ca904220",
+    "initialization": "flow_flowinit: external spatial fields initialized before load_restart_file",
+    "restored": "unc_read_map_or_rst restores mor_bl, morft, sediment concentrations and bodsed",
+    "vegetation": "Reader does not restore rnveg/diaveg/stemheight; new spatial inputs remain",
+    "scope": "Source inspection; actual restart acceptance and continuity checked separately"
+  },
+  "config": {
+    "length_m": 3.7,
+    "width_m": 1.2,
+    "grid_spacing_m": 0.02,
+    "discharge_m3_s": 3.5e-05,
+    "duration_s": 60.0,
+    "tilt_deg": 2.0,
+    "basin_start_m": 2.1,
+    "basin_transition_m": 0.25,
+    "basin_depth_m": 0.035,
+    "outlet_stage_m": 0.0,
+    "floodplain_mouth_elevation_m": 0.006,
+    "channel_width_m": 0.1,
+    "channel_depth_m": 0.012,
+    "grain_density_kg_m3": 1600.0,
+    "grain_diameter_m": 0.0007,
+    "bed_porosity": 0.4,
+    "initial_sediment_thickness_m": 0.06,
+    "manning_n": 0.02,
+    "horizontal_eddy_viscosity_m2_s": 1e-05,
+    "horizontal_eddy_diffusivity_m2_s": 1e-05,
+    "stem_height_m": 0.02,
+    "stem_diameter_m": 0.001,
+    "stem_density_m2": 400.0,
+    "vegetation_drag_coefficient": 0.7,
+    "max_timestep_s": 0.025,
+    "output_interval_s": 30,
+    "wet_depth_threshold_m": 0.0001,
+    "sediment_depth_threshold_m": 0.0005,
+    "cases": [
+      "bare",
+      "half_delta",
+      "half_delta_mirrored",
+      "river_and_delta"
+    ],
+    "parameter_status": "Discharge, duration and table tilt follow essay; bed geometry, actual bed slope, vegetation and sediment properties are declared scenarios. Sediment is supplied by erosion of the finite initial bed, with no imposed external sediment feed.",
+    "hydrodynamic_spinup_s": 60
+  },
+  "stages": [
+    {
+      "name": "bare_first",
+      "directory": "bare_first",
+      "vegetation": "bare",
+      "parent": null,
+      "start_s": 0,
+      "stop_s": 120.0,
+      "hydrodynamic_spinup_s": 60.0,
+      "morphological_duration_s": 60.0,
+      "status": "executed_to_requested_time",
+      "run_record": {
+        "command": [
+          "<native-workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+          "--autostartstop",
+          "flow.mdu"
+        ],
+        "input_sha256": {
+          "bedlevel.xyz": "4b2849ec79d00b32eb795b907a952f6364bdaccb06cf1e6b9f472cd69bb1695f",
+          "bedload_boundary.bcm": "f92b28444eb1c5df1c778b6e8ce70daed1fc6be5645a432625357671afd4877b",
+          "boundaries.bc": "1cc41e50b3dbaf65e3e61ada36e627930da13118dd69de0ca1a49d1544a87a57",
+          "boundaries.ext": "716fe189ebb9b6129ca58f743ebc2bb4ef649f238e7b9b4dedc02f877ef8370a",
+          "flow.mdu": "19001de24f1b8c59a1d08b6bc77c2770c3f5dd7a8606bbb7d2be32d183804fb5",
+          "flume_net.nc": "ac7212dda4876c87fc4f0888d7ef7662f64e7f441ff74b1427e20e5a4f494038",
+          "inlet.pli": "0c6f0c962dfc7ce1fd883c7348b6c03d9fbcf1377ba8bf6a842324167a0bb45c",
+          "massbalancearea.xyz": "0c6b8a232a54e8355fe95ccdbc28e810cc103cacd37f325fa00604acb3048e5d",
+          "morphology.mor": "bd3e191561d4fbed158bf5abea5027afe077ee9b496420612ade5f51f060612b",
+          "outlet.pli": "3438edeef2a4b34edc56ebc739c5e72ee3c8beb2a5914964afed27ae002e5d20",
+          "sediment.sed": "b862b5947dfd05eeadf5f726deeaed237cf1bfa2ce2a857be257c0597fbb5210",
+          "sediment_boundary.bc": "0631d3f3b203a96d8cd23ea81fa391e9bcec5446ea41f7b0e70b2a8c339d76dc",
+          "spatial.ext": "d9676b023a65902fa851c0ff0fe618415397c7ef488835dc0809f291d4def4c6",
+          "stemdensity.xyz": "1c0a1795a602dc2013e30445827aa1c0a058a3b97c672548285619a48008c02e",
+          "stemdiameter.xyz": "2ab205c17211aa55b9ecaec3217667fd1aa18ce86187be57b999372b4fb21747",
+          "stemheight.xyz": "b6402d5bbf6806ba6eba1b1b9624a64f8efbfc605737968de4f7c04e4986f4c7"
+        },
+        "engine_sha256": "44fc14002dfe25e05c35cdc0a5259e5af2b400ad5371eefc2fe406f4b8ac911e",
+        "status": "executed_to_requested_time",
+        "requested_duration_s": 120.0,
+        "omp_num_threads": 1,
+        "returncode": 0,
+        "last_map_time_s": 120.0,
+        "map": "output/flow_map.nc",
+        "verification_scope": "Execution and output time only; inspect conservation and physics separately.",
+        "elapsed_wall_s": 120.96838291700988
+      }
+    },
+    {
+      "name": "bare_continued",
+      "directory": "bare_continued",
+      "vegetation": "bare",
+      "parent": "bare_first",
+      "start_s": 120.0,
+      "stop_s": 180.0,
+      "hydrodynamic_spinup_s": 0,
+      "morphological_duration_s": 60.0,
+      "status": "executed_to_requested_time",
+      "restart": {
+        "source": "bare_first/output/flow_20220101_000200_rst.nc",
+        "sha256": "489cda2809b2dcc6587367cc1346a9558f25714e5670d5996839dff6d0a5ee89"
+      },
+      "run_record": {
+        "command": [
+          "<native-workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+          "--autostartstop",
+          "flow.mdu"
+        ],
+        "input_sha256": {
+          "bedlevel.xyz": "4b2849ec79d00b32eb795b907a952f6364bdaccb06cf1e6b9f472cd69bb1695f",
+          "bedload_boundary.bcm": "f92b28444eb1c5df1c778b6e8ce70daed1fc6be5645a432625357671afd4877b",
+          "boundaries.bc": "1cc41e50b3dbaf65e3e61ada36e627930da13118dd69de0ca1a49d1544a87a57",
+          "boundaries.ext": "716fe189ebb9b6129ca58f743ebc2bb4ef649f238e7b9b4dedc02f877ef8370a",
+          "flow.mdu": "0aa8dcd09ffd66f284f1c73d74216b75258234f0c8e749139c03b604378400f3",
+          "flume_net.nc": "ac7212dda4876c87fc4f0888d7ef7662f64e7f441ff74b1427e20e5a4f494038",
+          "inlet.pli": "0c6f0c962dfc7ce1fd883c7348b6c03d9fbcf1377ba8bf6a842324167a0bb45c",
+          "massbalancearea.xyz": "0c6b8a232a54e8355fe95ccdbc28e810cc103cacd37f325fa00604acb3048e5d",
+          "morphology.mor": "f1b8d73dec3837b7d53e8908962cabc9d19cfa596d3e3d7cfe4124b615034075",
+          "outlet.pli": "3438edeef2a4b34edc56ebc739c5e72ee3c8beb2a5914964afed27ae002e5d20",
+          "parent_rst.nc": "489cda2809b2dcc6587367cc1346a9558f25714e5670d5996839dff6d0a5ee89",
+          "sediment.sed": "b862b5947dfd05eeadf5f726deeaed237cf1bfa2ce2a857be257c0597fbb5210",
+          "sediment_boundary.bc": "0631d3f3b203a96d8cd23ea81fa391e9bcec5446ea41f7b0e70b2a8c339d76dc",
+          "spatial.ext": "d9676b023a65902fa851c0ff0fe618415397c7ef488835dc0809f291d4def4c6",
+          "stemdensity.xyz": "1c0a1795a602dc2013e30445827aa1c0a058a3b97c672548285619a48008c02e",
+          "stemdiameter.xyz": "2ab205c17211aa55b9ecaec3217667fd1aa18ce86187be57b999372b4fb21747",
+          "stemheight.xyz": "b6402d5bbf6806ba6eba1b1b9624a64f8efbfc605737968de4f7c04e4986f4c7"
+        },
+        "engine_sha256": "44fc14002dfe25e05c35cdc0a5259e5af2b400ad5371eefc2fe406f4b8ac911e",
+        "status": "executed_to_requested_time",
+        "requested_duration_s": 180.0,
+        "omp_num_threads": 1,
+        "returncode": 0,
+        "last_map_time_s": 180.0,
+        "map": "output/flow_map.nc",
+        "verification_scope": "Execution and output time only; inspect conservation and physics separately.",
+        "elapsed_wall_s": 96.35010304200114
+      },
+      "restart_continuity": {
+        "bed_max_abs_difference_m": 0.0,
+        "bed_tolerance_m": 1e-07,
+        "mesh2d_bodsed": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_sedfrac_concentration": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_s1": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "vegetation": {
+          "mask_matches": true,
+          "changed_density_cells": 0,
+          "note": "Intervention changes stem density footprint; stem height and diameter stay fixed"
+        },
+        "scope": "State continuity and prescribed vegetation; budgets/calibration checked separately"
+      }
+    },
+    {
+      "name": "half_delta",
+      "directory": "half_delta",
+      "vegetation": "half_delta",
+      "parent": "bare_first",
+      "start_s": 120.0,
+      "stop_s": 180.0,
+      "hydrodynamic_spinup_s": 0,
+      "morphological_duration_s": 60.0,
+      "status": "executed_to_requested_time",
+      "restart": {
+        "source": "bare_first/output/flow_20220101_000200_rst.nc",
+        "sha256": "489cda2809b2dcc6587367cc1346a9558f25714e5670d5996839dff6d0a5ee89"
+      },
+      "run_record": {
+        "command": [
+          "<native-workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+          "--autostartstop",
+          "flow.mdu"
+        ],
+        "input_sha256": {
+          "bedlevel.xyz": "4b2849ec79d00b32eb795b907a952f6364bdaccb06cf1e6b9f472cd69bb1695f",
+          "bedload_boundary.bcm": "f92b28444eb1c5df1c778b6e8ce70daed1fc6be5645a432625357671afd4877b",
+          "boundaries.bc": "1cc41e50b3dbaf65e3e61ada36e627930da13118dd69de0ca1a49d1544a87a57",
+          "boundaries.ext": "716fe189ebb9b6129ca58f743ebc2bb4ef649f238e7b9b4dedc02f877ef8370a",
+          "flow.mdu": "0aa8dcd09ffd66f284f1c73d74216b75258234f0c8e749139c03b604378400f3",
+          "flume_net.nc": "ac7212dda4876c87fc4f0888d7ef7662f64e7f441ff74b1427e20e5a4f494038",
+          "inlet.pli": "0c6f0c962dfc7ce1fd883c7348b6c03d9fbcf1377ba8bf6a842324167a0bb45c",
+          "massbalancearea.xyz": "0c6b8a232a54e8355fe95ccdbc28e810cc103cacd37f325fa00604acb3048e5d",
+          "morphology.mor": "f1b8d73dec3837b7d53e8908962cabc9d19cfa596d3e3d7cfe4124b615034075",
+          "outlet.pli": "3438edeef2a4b34edc56ebc739c5e72ee3c8beb2a5914964afed27ae002e5d20",
+          "parent_rst.nc": "489cda2809b2dcc6587367cc1346a9558f25714e5670d5996839dff6d0a5ee89",
+          "sediment.sed": "b862b5947dfd05eeadf5f726deeaed237cf1bfa2ce2a857be257c0597fbb5210",
+          "sediment_boundary.bc": "0631d3f3b203a96d8cd23ea81fa391e9bcec5446ea41f7b0e70b2a8c339d76dc",
+          "spatial.ext": "d9676b023a65902fa851c0ff0fe618415397c7ef488835dc0809f291d4def4c6",
+          "stemdensity.xyz": "02e0622076a0b87c53204881d96662396866d6c90a64da2efb055c0dc4295638",
+          "stemdiameter.xyz": "2ab205c17211aa55b9ecaec3217667fd1aa18ce86187be57b999372b4fb21747",
+          "stemheight.xyz": "b6402d5bbf6806ba6eba1b1b9624a64f8efbfc605737968de4f7c04e4986f4c7"
+        },
+        "engine_sha256": "44fc14002dfe25e05c35cdc0a5259e5af2b400ad5371eefc2fe406f4b8ac911e",
+        "status": "executed_to_requested_time",
+        "requested_duration_s": 180.0,
+        "omp_num_threads": 1,
+        "returncode": 0,
+        "last_map_time_s": 180.0,
+        "map": "output/flow_map.nc",
+        "verification_scope": "Execution and output time only; inspect conservation and physics separately.",
+        "elapsed_wall_s": 112.66649758300628
+      },
+      "restart_continuity": {
+        "bed_max_abs_difference_m": 0.0,
+        "bed_tolerance_m": 1e-07,
+        "mesh2d_bodsed": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_sedfrac_concentration": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_s1": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "vegetation": {
+          "mask_matches": true,
+          "changed_density_cells": 2430,
+          "note": "Intervention changes stem density footprint; stem height and diameter stay fixed"
+        },
+        "scope": "State continuity and prescribed vegetation; budgets/calibration checked separately"
+      }
+    },
+    {
+      "name": "half_delta_mirrored",
+      "directory": "half_delta_mirrored",
+      "vegetation": "half_delta_mirrored",
+      "parent": "bare_first",
+      "start_s": 120.0,
+      "stop_s": 180.0,
+      "hydrodynamic_spinup_s": 0,
+      "morphological_duration_s": 60.0,
+      "status": "executed_to_requested_time",
+      "restart": {
+        "source": "bare_first/output/flow_20220101_000200_rst.nc",
+        "sha256": "489cda2809b2dcc6587367cc1346a9558f25714e5670d5996839dff6d0a5ee89"
+      },
+      "run_record": {
+        "command": [
+          "<native-workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+          "--autostartstop",
+          "flow.mdu"
+        ],
+        "input_sha256": {
+          "bedlevel.xyz": "4b2849ec79d00b32eb795b907a952f6364bdaccb06cf1e6b9f472cd69bb1695f",
+          "bedload_boundary.bcm": "f92b28444eb1c5df1c778b6e8ce70daed1fc6be5645a432625357671afd4877b",
+          "boundaries.bc": "1cc41e50b3dbaf65e3e61ada36e627930da13118dd69de0ca1a49d1544a87a57",
+          "boundaries.ext": "716fe189ebb9b6129ca58f743ebc2bb4ef649f238e7b9b4dedc02f877ef8370a",
+          "flow.mdu": "0aa8dcd09ffd66f284f1c73d74216b75258234f0c8e749139c03b604378400f3",
+          "flume_net.nc": "ac7212dda4876c87fc4f0888d7ef7662f64e7f441ff74b1427e20e5a4f494038",
+          "inlet.pli": "0c6f0c962dfc7ce1fd883c7348b6c03d9fbcf1377ba8bf6a842324167a0bb45c",
+          "massbalancearea.xyz": "0c6b8a232a54e8355fe95ccdbc28e810cc103cacd37f325fa00604acb3048e5d",
+          "morphology.mor": "f1b8d73dec3837b7d53e8908962cabc9d19cfa596d3e3d7cfe4124b615034075",
+          "outlet.pli": "3438edeef2a4b34edc56ebc739c5e72ee3c8beb2a5914964afed27ae002e5d20",
+          "parent_rst.nc": "489cda2809b2dcc6587367cc1346a9558f25714e5670d5996839dff6d0a5ee89",
+          "sediment.sed": "b862b5947dfd05eeadf5f726deeaed237cf1bfa2ce2a857be257c0597fbb5210",
+          "sediment_boundary.bc": "0631d3f3b203a96d8cd23ea81fa391e9bcec5446ea41f7b0e70b2a8c339d76dc",
+          "spatial.ext": "d9676b023a65902fa851c0ff0fe618415397c7ef488835dc0809f291d4def4c6",
+          "stemdensity.xyz": "ea5499120a10fa62fe991cb277957185938a5a8dadabd551221e4164bcd612cf",
+          "stemdiameter.xyz": "2ab205c17211aa55b9ecaec3217667fd1aa18ce86187be57b999372b4fb21747",
+          "stemheight.xyz": "b6402d5bbf6806ba6eba1b1b9624a64f8efbfc605737968de4f7c04e4986f4c7"
+        },
+        "engine_sha256": "44fc14002dfe25e05c35cdc0a5259e5af2b400ad5371eefc2fe406f4b8ac911e",
+        "status": "executed_to_requested_time",
+        "requested_duration_s": 180.0,
+        "omp_num_threads": 1,
+        "returncode": 0,
+        "last_map_time_s": 180.0,
+        "map": "output/flow_map.nc",
+        "verification_scope": "Execution and output time only; inspect conservation and physics separately.",
+        "elapsed_wall_s": 107.64398749999236
+      },
+      "restart_continuity": {
+        "bed_max_abs_difference_m": 0.0,
+        "bed_tolerance_m": 1e-07,
+        "mesh2d_bodsed": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_sedfrac_concentration": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_s1": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "vegetation": {
+          "mask_matches": true,
+          "changed_density_cells": 2430,
+          "note": "Intervention changes stem density footprint; stem height and diameter stay fixed"
+        },
+        "scope": "State continuity and prescribed vegetation; budgets/calibration checked separately"
+      }
+    },
+    {
+      "name": "river_margins_first",
+      "directory": "river_margins_first",
+      "vegetation": "river_margins",
+      "parent": null,
+      "start_s": 0,
+      "stop_s": 120.0,
+      "hydrodynamic_spinup_s": 60.0,
+      "morphological_duration_s": 60.0,
+      "status": "executed_to_requested_time",
+      "run_record": {
+        "command": [
+          "<native-workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+          "--autostartstop",
+          "flow.mdu"
+        ],
+        "input_sha256": {
+          "bedlevel.xyz": "4b2849ec79d00b32eb795b907a952f6364bdaccb06cf1e6b9f472cd69bb1695f",
+          "bedload_boundary.bcm": "f92b28444eb1c5df1c778b6e8ce70daed1fc6be5645a432625357671afd4877b",
+          "boundaries.bc": "1cc41e50b3dbaf65e3e61ada36e627930da13118dd69de0ca1a49d1544a87a57",
+          "boundaries.ext": "716fe189ebb9b6129ca58f743ebc2bb4ef649f238e7b9b4dedc02f877ef8370a",
+          "flow.mdu": "19001de24f1b8c59a1d08b6bc77c2770c3f5dd7a8606bbb7d2be32d183804fb5",
+          "flume_net.nc": "ac7212dda4876c87fc4f0888d7ef7662f64e7f441ff74b1427e20e5a4f494038",
+          "inlet.pli": "0c6f0c962dfc7ce1fd883c7348b6c03d9fbcf1377ba8bf6a842324167a0bb45c",
+          "massbalancearea.xyz": "0c6b8a232a54e8355fe95ccdbc28e810cc103cacd37f325fa00604acb3048e5d",
+          "morphology.mor": "bd3e191561d4fbed158bf5abea5027afe077ee9b496420612ade5f51f060612b",
+          "outlet.pli": "3438edeef2a4b34edc56ebc739c5e72ee3c8beb2a5914964afed27ae002e5d20",
+          "sediment.sed": "b862b5947dfd05eeadf5f726deeaed237cf1bfa2ce2a857be257c0597fbb5210",
+          "sediment_boundary.bc": "0631d3f3b203a96d8cd23ea81fa391e9bcec5446ea41f7b0e70b2a8c339d76dc",
+          "spatial.ext": "d9676b023a65902fa851c0ff0fe618415397c7ef488835dc0809f291d4def4c6",
+          "stemdensity.xyz": "f9da187f7b452ce4f8dcaed99d1313963b1534e02fe7744c3042e3145736b1f2",
+          "stemdiameter.xyz": "2ab205c17211aa55b9ecaec3217667fd1aa18ce86187be57b999372b4fb21747",
+          "stemheight.xyz": "b6402d5bbf6806ba6eba1b1b9624a64f8efbfc605737968de4f7c04e4986f4c7"
+        },
+        "engine_sha256": "44fc14002dfe25e05c35cdc0a5259e5af2b400ad5371eefc2fe406f4b8ac911e",
+        "status": "executed_to_requested_time",
+        "requested_duration_s": 120.0,
+        "omp_num_threads": 1,
+        "returncode": 0,
+        "last_map_time_s": 120.0,
+        "map": "output/flow_map.nc",
+        "verification_scope": "Execution and output time only; inspect conservation and physics separately.",
+        "elapsed_wall_s": 164.14408720799838
+      }
+    },
+    {
+      "name": "river_then_delta",
+      "directory": "river_then_delta",
+      "vegetation": "river_and_delta",
+      "parent": "river_margins_first",
+      "start_s": 120.0,
+      "stop_s": 180.0,
+      "hydrodynamic_spinup_s": 0,
+      "morphological_duration_s": 60.0,
+      "status": "executed_to_requested_time",
+      "restart": {
+        "source": "river_margins_first/output/flow_20220101_000200_rst.nc",
+        "sha256": "4e393c1537e80e4871577c18ab1ffb96d305514b661635f9a6dc7f57b9b4fe57"
+      },
+      "run_record": {
+        "command": [
+          "<native-workspace>/source/build_fm-suite_release/install/bin/dflowfm",
+          "--autostartstop",
+          "flow.mdu"
+        ],
+        "input_sha256": {
+          "bedlevel.xyz": "4b2849ec79d00b32eb795b907a952f6364bdaccb06cf1e6b9f472cd69bb1695f",
+          "bedload_boundary.bcm": "f92b28444eb1c5df1c778b6e8ce70daed1fc6be5645a432625357671afd4877b",
+          "boundaries.bc": "1cc41e50b3dbaf65e3e61ada36e627930da13118dd69de0ca1a49d1544a87a57",
+          "boundaries.ext": "716fe189ebb9b6129ca58f743ebc2bb4ef649f238e7b9b4dedc02f877ef8370a",
+          "flow.mdu": "0aa8dcd09ffd66f284f1c73d74216b75258234f0c8e749139c03b604378400f3",
+          "flume_net.nc": "ac7212dda4876c87fc4f0888d7ef7662f64e7f441ff74b1427e20e5a4f494038",
+          "inlet.pli": "0c6f0c962dfc7ce1fd883c7348b6c03d9fbcf1377ba8bf6a842324167a0bb45c",
+          "massbalancearea.xyz": "0c6b8a232a54e8355fe95ccdbc28e810cc103cacd37f325fa00604acb3048e5d",
+          "morphology.mor": "f1b8d73dec3837b7d53e8908962cabc9d19cfa596d3e3d7cfe4124b615034075",
+          "outlet.pli": "3438edeef2a4b34edc56ebc739c5e72ee3c8beb2a5914964afed27ae002e5d20",
+          "parent_rst.nc": "4e393c1537e80e4871577c18ab1ffb96d305514b661635f9a6dc7f57b9b4fe57",
+          "sediment.sed": "b862b5947dfd05eeadf5f726deeaed237cf1bfa2ce2a857be257c0597fbb5210",
+          "sediment_boundary.bc": "0631d3f3b203a96d8cd23ea81fa391e9bcec5446ea41f7b0e70b2a8c339d76dc",
+          "spatial.ext": "d9676b023a65902fa851c0ff0fe618415397c7ef488835dc0809f291d4def4c6",
+          "stemdensity.xyz": "8b4b97aabd8a18e51a30995ad350cef85cbecae6c922a336f56950292215c86f",
+          "stemdiameter.xyz": "2ab205c17211aa55b9ecaec3217667fd1aa18ce86187be57b999372b4fb21747",
+          "stemheight.xyz": "b6402d5bbf6806ba6eba1b1b9624a64f8efbfc605737968de4f7c04e4986f4c7"
+        },
+        "engine_sha256": "44fc14002dfe25e05c35cdc0a5259e5af2b400ad5371eefc2fe406f4b8ac911e",
+        "status": "executed_to_requested_time",
+        "requested_duration_s": 180.0,
+        "omp_num_threads": 1,
+        "returncode": 0,
+        "last_map_time_s": 180.0,
+        "map": "output/flow_map.nc",
+        "verification_scope": "Execution and output time only; inspect conservation and physics separately.",
+        "elapsed_wall_s": 99.34006887499709
+      },
+      "restart_continuity": {
+        "bed_max_abs_difference_m": 0.0,
+        "bed_tolerance_m": 1e-07,
+        "mesh2d_bodsed": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_sedfrac_concentration": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "mesh2d_s1": {
+          "max_abs_difference": 0.0,
+          "tolerance": "two output floating-point rounding units"
+        },
+        "vegetation": {
+          "mask_matches": true,
+          "changed_density_cells": 4730,
+          "note": "Intervention changes stem density footprint; stem height and diameter stay fixed"
+        },
+        "scope": "State continuity and prescribed vegetation; budgets/calibration checked separately"
+      }
+    }
+  ],
+  "verification_scope": "Execution time, bed/sediment/water-level restart continuity and prescribed vegetation mask; no conservation or calibration claim"
+}

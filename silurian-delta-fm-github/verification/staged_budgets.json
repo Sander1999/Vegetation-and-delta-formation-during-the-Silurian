@@ -1,0 +1,410 @@
+{
+  "river_then_delta": {
+    "case": "<staged-verification>/river_then_delta",
+    "native_budget": "output/flow_mass_balances.nc",
+    "status": "passed",
+    "time_end_s": 180.0,
+    "balance_area_m2": 4.439999999999577,
+    "fractions": [
+      {
+        "name": "plastic",
+        "passed": true,
+        "initial_storage_inferred_kg": 255.74398313647166,
+        "final_storage_kg": 255.74397207641238,
+        "storage_components": {
+          "mass": {
+            "end_kg": 0.0030269148113058787
+          },
+          "bed_mass": {
+            "end_kg": 255.74094516160108
+          },
+          "bedshort_mass": {
+            "end_kg": 0.0
+          }
+        },
+        "boundary_inward_kg": 1.4258954945210492e-14,
+        "boundary_outward_kg": 5.871106640205406e-06,
+        "zero_external_feed_verified": true,
+        "storage_change_kg": -1.1060059267368593e-05,
+        "residual_kg": -5.188952641422141e-06,
+        "max_abs_cumulative_residual_kg": 5.188952641422141e-06,
+        "movement_scale_kg": 0.28645297065395986,
+        "mapped_redistribution": {
+          "lower_bound_moved_mass_kg": 0.28645297065395986,
+          "bed_cell_absolute_changes_kg": 0.5711158584594729,
+          "suspended_cell_absolute_changes_kg": 0.0017900828484467958,
+          "method": "Half summed absolute cell-inventory changes between successive maps; resolves internal redistribution without normalising by inactive bed inventory.",
+          "limitation": "Output-sampled lower bound; misses transfers reversed between snapshots and inherits map precision."
+        },
+        "allowed_residual_kg": 0.00028646297065395985,
+        "relative_to_movement": 1.8114501063040068e-05,
+        "boundary_terms": {
+          "Boundary in suspension, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 5.8711064780419785e-06
+          },
+          "Boundary in suspension, Boundary outlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 1.660638061996893e-133
+          },
+          "Boundary as bedload, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 0.0
+          },
+          "Boundary as bedload, Boundary outlet": {
+            "inward_kg": 1.4258954945210492e-14,
+            "outward_kg": 1.6216342873370244e-13
+          }
+        }
+      }
+    ],
+    "equation": "residual = change(suspended + bed + native bed-shortage + fluff storage) + outward mass - inward mass",
+    "native_flux_units": "kg integrated per output interval",
+    "tolerance": {
+      "absolute_kg": 1e-08,
+      "relative": 0.001,
+      "basis": "Relative to actual cumulative boundary exchange or the map-resolved lower bound on internal mass redistribution, not net storage change or the large inactive initial bed. 0.1% is a declared numerical screening target; refine timestep/grid for physical convergence. Absolute 1e-8 kg avoids zero-throughput division."
+    },
+    "scope": "Native discrete mass accounting, not calibration or validation of sediment closure"
+  },
+  "half_delta": {
+    "case": "<staged-verification>/half_delta",
+    "native_budget": "output/flow_mass_balances.nc",
+    "status": "passed",
+    "time_end_s": 180.0,
+    "balance_area_m2": 4.439999999999577,
+    "fractions": [
+      {
+        "name": "plastic",
+        "passed": true,
+        "initial_storage_inferred_kg": 255.74398313646375,
+        "final_storage_kg": 255.74397094768338,
+        "storage_components": {
+          "mass": {
+            "end_kg": 0.003050810290192032
+          },
+          "bed_mass": {
+            "end_kg": 255.74092013739318
+          },
+          "bedshort_mass": {
+            "end_kg": 0.0
+          }
+        },
+        "boundary_inward_kg": 1.3764144216888507e-14,
+        "boundary_outward_kg": 5.871115566302049e-06,
+        "zero_external_feed_verified": true,
+        "storage_change_kg": -1.2188780399470956e-05,
+        "residual_kg": -6.317664846933052e-06,
+        "max_abs_cumulative_residual_kg": 6.317664846933052e-06,
+        "movement_scale_kg": 0.28847879077072136,
+        "mapped_redistribution": {
+          "lower_bound_moved_mass_kg": 0.28847879077072136,
+          "bed_cell_absolute_changes_kg": 0.5751546920776369,
+          "suspended_cell_absolute_changes_kg": 0.001802889463805785,
+          "method": "Half summed absolute cell-inventory changes between successive maps; resolves internal redistribution without normalising by inactive bed inventory.",
+          "limitation": "Output-sampled lower bound; misses transfers reversed between snapshots and inherits map precision."
+        },
+        "allowed_residual_kg": 0.00028848879077072136,
+        "relative_to_movement": 2.1899928345006955e-05,
+        "boundary_terms": {
+          "Boundary in suspension, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 5.871115404426355e-06
+          },
+          "Boundary in suspension, Boundary outlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 1.5831116800720282e-133
+          },
+          "Boundary as bedload, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 0.0
+          },
+          "Boundary as bedload, Boundary outlet": {
+            "inward_kg": 1.3764144216888507e-14,
+            "outward_kg": 1.6187569283234323e-13
+          }
+        }
+      }
+    ],
+    "equation": "residual = change(suspended + bed + native bed-shortage + fluff storage) + outward mass - inward mass",
+    "native_flux_units": "kg integrated per output interval",
+    "tolerance": {
+      "absolute_kg": 1e-08,
+      "relative": 0.001,
+      "basis": "Relative to actual cumulative boundary exchange or the map-resolved lower bound on internal mass redistribution, not net storage change or the large inactive initial bed. 0.1% is a declared numerical screening target; refine timestep/grid for physical convergence. Absolute 1e-8 kg avoids zero-throughput division."
+    },
+    "scope": "Native discrete mass accounting, not calibration or validation of sediment closure"
+  },
+  "bare_first": {
+    "case": "<staged-verification>/bare_first",
+    "native_budget": "output/flow_mass_balances.nc",
+    "status": "passed",
+    "time_end_s": 120.0,
+    "balance_area_m2": 4.439999999999577,
+    "fractions": [
+      {
+        "name": "plastic",
+        "passed": true,
+        "initial_storage_inferred_kg": 255.7440000000372,
+        "final_storage_kg": 255.74398313646375,
+        "storage_components": {
+          "mass": {
+            "end_kg": 0.003765059349900583
+          },
+          "bed_mass": {
+            "end_kg": 255.74021807711387
+          },
+          "bedshort_mass": {
+            "end_kg": 0.0
+          }
+        },
+        "boundary_inward_kg": 4.372600005298565e-15,
+        "boundary_outward_kg": 1.578340841220292e-05,
+        "zero_external_feed_verified": true,
+        "storage_change_kg": -1.6863573437205046e-05,
+        "residual_kg": -1.0801650293747277e-06,
+        "max_abs_cumulative_residual_kg": 1.0801650293747277e-06,
+        "movement_scale_kg": 0.3363498764476847,
+        "mapped_redistribution": {
+          "lower_bound_moved_mass_kg": 0.3363498764476847,
+          "bed_cell_absolute_changes_kg": 0.666830615234375,
+          "suspended_cell_absolute_changes_kg": 0.005869137660994442,
+          "method": "Half summed absolute cell-inventory changes between successive maps; resolves internal redistribution without normalising by inactive bed inventory.",
+          "limitation": "Output-sampled lower bound; misses transfers reversed between snapshots and inherits map precision."
+        },
+        "allowed_residual_kg": 0.0003363598764476847,
+        "relative_to_movement": 3.2114328115198067e-06,
+        "boundary_terms": {
+          "Boundary in suspension, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 1.5783408275042264e-05
+          },
+          "Boundary in suspension, Boundary outlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 2.0695384981043115e-134
+          },
+          "Boundary as bedload, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 0.0
+          },
+          "Boundary as bedload, Boundary outlet": {
+            "inward_kg": 4.372600005298565e-15,
+            "outward_kg": 1.3716065368159702e-13
+          }
+        }
+      }
+    ],
+    "equation": "residual = change(suspended + bed + native bed-shortage + fluff storage) + outward mass - inward mass",
+    "native_flux_units": "kg integrated per output interval",
+    "tolerance": {
+      "absolute_kg": 1e-08,
+      "relative": 0.001,
+      "basis": "Relative to actual cumulative boundary exchange or the map-resolved lower bound on internal mass redistribution, not net storage change or the large inactive initial bed. 0.1% is a declared numerical screening target; refine timestep/grid for physical convergence. Absolute 1e-8 kg avoids zero-throughput division."
+    },
+    "scope": "Native discrete mass accounting, not calibration or validation of sediment closure"
+  },
+  "half_delta_mirrored": {
+    "case": "<staged-verification>/half_delta_mirrored",
+    "native_budget": "output/flow_mass_balances.nc",
+    "status": "passed",
+    "time_end_s": 180.0,
+    "balance_area_m2": 4.439999999999577,
+    "fractions": [
+      {
+        "name": "plastic",
+        "passed": true,
+        "initial_storage_inferred_kg": 255.74398313646375,
+        "final_storage_kg": 255.74397094768352,
+        "storage_components": {
+          "mass": {
+            "end_kg": 0.003050810290194369
+          },
+          "bed_mass": {
+            "end_kg": 255.74092013739332
+          },
+          "bedshort_mass": {
+            "end_kg": 0.0
+          }
+        },
+        "boundary_inward_kg": 1.3764144216670298e-14,
+        "boundary_outward_kg": 5.871115566301795e-06,
+        "zero_external_feed_verified": true,
+        "storage_change_kg": -1.2188780255025303e-05,
+        "residual_kg": -6.317664702487653e-06,
+        "max_abs_cumulative_residual_kg": 6.317664702487653e-06,
+        "movement_scale_kg": 0.28847879076976274,
+        "mapped_redistribution": {
+          "lower_bound_moved_mass_kg": 0.28847879076976274,
+          "bed_cell_absolute_changes_kg": 0.5751546920776369,
+          "suspended_cell_absolute_changes_kg": 0.0018028894618885172,
+          "method": "Half summed absolute cell-inventory changes between successive maps; resolves internal redistribution without normalising by inactive bed inventory.",
+          "limitation": "Output-sampled lower bound; misses transfers reversed between snapshots and inherits map precision."
+        },
+        "allowed_residual_kg": 0.00028848879076976276,
+        "relative_to_movement": 2.1899927844365628e-05,
+        "boundary_terms": {
+          "Boundary in suspension, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 5.871115404426101e-06
+          },
+          "Boundary in suspension, Boundary outlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 1.5831116818205047e-133
+          },
+          "Boundary as bedload, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 0.0
+          },
+          "Boundary as bedload, Boundary outlet": {
+            "inward_kg": 1.3764144216670298e-14,
+            "outward_kg": 1.6187569283198527e-13
+          }
+        }
+      }
+    ],
+    "equation": "residual = change(suspended + bed + native bed-shortage + fluff storage) + outward mass - inward mass",
+    "native_flux_units": "kg integrated per output interval",
+    "tolerance": {
+      "absolute_kg": 1e-08,
+      "relative": 0.001,
+      "basis": "Relative to actual cumulative boundary exchange or the map-resolved lower bound on internal mass redistribution, not net storage change or the large inactive initial bed. 0.1% is a declared numerical screening target; refine timestep/grid for physical convergence. Absolute 1e-8 kg avoids zero-throughput division."
+    },
+    "scope": "Native discrete mass accounting, not calibration or validation of sediment closure"
+  },
+  "river_margins_first": {
+    "case": "<staged-verification>/river_margins_first",
+    "native_budget": "output/flow_mass_balances.nc",
+    "status": "passed",
+    "time_end_s": 120.0,
+    "balance_area_m2": 4.439999999999577,
+    "fractions": [
+      {
+        "name": "plastic",
+        "passed": true,
+        "initial_storage_inferred_kg": 255.7440000000372,
+        "final_storage_kg": 255.74398313647166,
+        "storage_components": {
+          "mass": {
+            "end_kg": 0.0037650519117781406
+          },
+          "bed_mass": {
+            "end_kg": 255.74021808455987
+          },
+          "bedshort_mass": {
+            "end_kg": 0.0
+          }
+        },
+        "boundary_inward_kg": 4.372542725270384e-15,
+        "boundary_outward_kg": 1.5783408412202042e-05,
+        "zero_external_feed_verified": true,
+        "storage_change_kg": -1.6863565554945748e-05,
+        "residual_kg": -1.0801571471162478e-06,
+        "max_abs_cumulative_residual_kg": 1.0801571471162478e-06,
+        "movement_scale_kg": 0.33635011452360086,
+        "mapped_redistribution": {
+          "lower_bound_moved_mass_kg": 0.33635011452360086,
+          "bed_cell_absolute_changes_kg": 0.6668310958862306,
+          "suspended_cell_absolute_changes_kg": 0.00586913316097118,
+          "method": "Half summed absolute cell-inventory changes between successive maps; resolves internal redistribution without normalising by inactive bed inventory.",
+          "limitation": "Output-sampled lower bound; misses transfers reversed between snapshots and inherits map precision."
+        },
+        "allowed_residual_kg": 0.00033636011452360085,
+        "relative_to_movement": 3.211407103714412e-06,
+        "boundary_terms": {
+          "Boundary in suspension, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 1.578340827504219e-05
+          },
+          "Boundary in suspension, Boundary outlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 2.0712518241833532e-134
+          },
+          "Boundary as bedload, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 0.0
+          },
+          "Boundary as bedload, Boundary outlet": {
+            "inward_kg": 4.372542725270384e-15,
+            "outward_kg": 1.3715985316925157e-13
+          }
+        }
+      }
+    ],
+    "equation": "residual = change(suspended + bed + native bed-shortage + fluff storage) + outward mass - inward mass",
+    "native_flux_units": "kg integrated per output interval",
+    "tolerance": {
+      "absolute_kg": 1e-08,
+      "relative": 0.001,
+      "basis": "Relative to actual cumulative boundary exchange or the map-resolved lower bound on internal mass redistribution, not net storage change or the large inactive initial bed. 0.1% is a declared numerical screening target; refine timestep/grid for physical convergence. Absolute 1e-8 kg avoids zero-throughput division."
+    },
+    "scope": "Native discrete mass accounting, not calibration or validation of sediment closure"
+  },
+  "bare_continued": {
+    "case": "<staged-verification>/bare_continued",
+    "native_budget": "output/flow_mass_balances.nc",
+    "status": "passed",
+    "time_end_s": 180.0,
+    "balance_area_m2": 4.439999999999577,
+    "fractions": [
+      {
+        "name": "plastic",
+        "passed": true,
+        "initial_storage_inferred_kg": 255.74398313646375,
+        "final_storage_kg": 255.74397070226837,
+        "storage_components": {
+          "mass": {
+            "end_kg": 0.003053393426681569
+          },
+          "bed_mass": {
+            "end_kg": 255.7409173088417
+          },
+          "bedshort_mass": {
+            "end_kg": 0.0
+          }
+        },
+        "boundary_inward_kg": 1.3530557098547968e-14,
+        "boundary_outward_kg": 5.871124544713073e-06,
+        "zero_external_feed_verified": true,
+        "storage_change_kg": -1.243419539718885e-05,
+        "residual_kg": -6.563070866006334e-06,
+        "max_abs_cumulative_residual_kg": 6.563070866006334e-06,
+        "movement_scale_kg": 0.2903947165738954,
+        "mapped_redistribution": {
+          "lower_bound_moved_mass_kg": 0.2903947165738954,
+          "bed_cell_absolute_changes_kg": 0.5790076324462892,
+          "suspended_cell_absolute_changes_kg": 0.0017818007015015889,
+          "method": "Half summed absolute cell-inventory changes between successive maps; resolves internal redistribution without normalising by inactive bed inventory.",
+          "limitation": "Output-sampled lower bound; misses transfers reversed between snapshots and inherits map precision."
+        },
+        "allowed_residual_kg": 0.00029040471657389535,
+        "relative_to_movement": 2.2600517473038324e-05,
+        "boundary_terms": {
+          "Boundary in suspension, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 5.8711243829406734e-06
+          },
+          "Boundary in suspension, Boundary outlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 1.5019646840857427e-133
+          },
+          "Boundary as bedload, Boundary inlet": {
+            "inward_kg": 0.0,
+            "outward_kg": 0.0
+          },
+          "Boundary as bedload, Boundary outlet": {
+            "inward_kg": 1.3530557098547968e-14,
+            "outward_kg": 1.617723993909374e-13
+          }
+        }
+      }
+    ],
+    "equation": "residual = change(suspended + bed + native bed-shortage + fluff storage) + outward mass - inward mass",
+    "native_flux_units": "kg integrated per output interval",
+    "tolerance": {
+      "absolute_kg": 1e-08,
+      "relative": 0.001,
+      "basis": "Relative to actual cumulative boundary exchange or the map-resolved lower bound on internal mass redistribution, not net storage change or the large inactive initial bed. 0.1% is a declared numerical screening target; refine timestep/grid for physical convergence. Absolute 1e-8 kg avoids zero-throughput division."
+    },
+    "scope": "Native discrete mass accounting, not calibration or validation of sediment closure"
+  }
+}

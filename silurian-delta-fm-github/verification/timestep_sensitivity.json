@@ -1,0 +1,110 @@
+{
+  "vegetation_contrast_percent_of_bare": {
+    "positive_bed_change_bulk_volume_m3": {
+      "baseline": -0.04374967237606997,
+      "refinement": -0.046906641297916885
+    },
+    "negative_bed_change_bulk_volume_m3": {
+      "baseline": -0.044687811329269245,
+      "refinement": -0.048111345632284586
+    }
+  },
+  "stored_time_s": 120.0,
+  "active_morphology_s": 60.0,
+  "configuration_differences": {
+    "duration_s": [
+      1800,
+      60
+    ],
+    "cases": [
+      [
+        "bare",
+        "half_delta",
+        "half_delta_mirrored",
+        "river_and_delta"
+      ],
+      [
+        "bare",
+        "half_delta"
+      ]
+    ],
+    "max_timestep_s": [
+      0.025,
+      0.0125
+    ]
+  },
+  "cases": [
+    {
+      "scenario": "bare",
+      "metrics": {
+        "positive_bed_change_bulk_volume_m3": {
+          "baseline": 0.00030846585946856084,
+          "refinement": 0.0003085469652200119,
+          "difference": 8.110575145108163e-08,
+          "relative_change": 0.00026293266811054666
+        },
+        "negative_bed_change_bulk_volume_m3": {
+          "baseline": 0.0003124053571373223,
+          "refinement": 0.00031248550587333724,
+          "difference": 8.014873601494511e-08,
+          "relative_change": 0.00025655365435911704
+        },
+        "downstream_deposition_footprint_m2": {
+          "baseline": 0.01760000000000002,
+          "refinement": 0.01760000000000002,
+          "difference": 0.0,
+          "relative_change": 0.0
+        },
+        "downstream_deposition_centroid_x_m": {
+          "baseline": 2.1876312108634193,
+          "refinement": 2.1877967412875745,
+          "difference": 0.00016553042415523578,
+          "relative_change": 7.566651240539938e-05
+        },
+        "downstream_deposition_centroid_y_m": {
+          "baseline": 0.6,
+          "refinement": 0.6000000000000001,
+          "difference": 1.1102230246251565e-16,
+          "relative_change": 1.8503717077085943e-16
+        }
+      }
+    },
+    {
+      "scenario": "half_delta",
+      "metrics": {
+        "positive_bed_change_bulk_volume_m3": {
+          "baseline": 0.0003083309066656513,
+          "refinement": 0.00030840223620180057,
+          "difference": 7.132953614927013e-08,
+          "relative_change": 0.000231340856875625
+        },
+        "negative_bed_change_bulk_volume_m3": {
+          "baseline": 0.00031226575002074223,
+          "refinement": 0.0003123351648915557,
+          "difference": 6.94148708134867e-08,
+          "relative_change": 0.00022229421833446617
+        },
+        "downstream_deposition_footprint_m2": {
+          "baseline": 0.01760000000000002,
+          "refinement": 0.01760000000000002,
+          "difference": 0.0,
+          "relative_change": 0.0
+        },
+        "downstream_deposition_centroid_x_m": {
+          "baseline": 2.1873973351113567,
+          "refinement": 2.18757668732152,
+          "difference": 0.0001793522101634082,
+          "relative_change": 8.199342994732033e-05
+        },
+        "downstream_deposition_centroid_y_m": {
+          "baseline": 0.5995977267259245,
+          "refinement": 0.5995940813347976,
+          "difference": -3.6453911268496952e-06,
+          "relative_change": -6.0797280649397786e-06
+        }
+      }
+    }
+  ],
+  "scope": "Matched early-time sensitivity. Two resolutions do not establish asymptotic convergence or calibration; report effects on both individual metrics and the vegetation contrast.",
+  "boundary_discretisation": "The nominal inlet polyline is identical. Its mesh intersection may open a different resolved width on different grids; this contributes to grid sensitivity."
+}

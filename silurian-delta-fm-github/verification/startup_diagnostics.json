@@ -1,0 +1,55 @@
+{
+  "purpose": "Identify unintended boundary supply and startup conservation problems before interpreting vegetation differences.",
+  "diagnostics": [
+    {
+      "case": "delta_smoke3",
+      "maximum_dt_s": 0.1,
+      "fixed_bed_flow_spinup_s": 0,
+      "stop_time_s": 60.0,
+      "active_morphology_s": 60,
+      "inward_sediment_kg": 0.2581710784910599,
+      "max_cumulative_sediment_residual_kg": 0.0006904025134614467,
+      "fraction_of_resolved_movement": 0.002674205482257647,
+      "screening_status": "failed"
+    },
+    {
+      "case": "delta_smoke4",
+      "maximum_dt_s": 0.1,
+      "fixed_bed_flow_spinup_s": 0,
+      "stop_time_s": 60.0,
+      "active_morphology_s": 60,
+      "inward_sediment_kg": 8.401804031485636e-15,
+      "max_cumulative_sediment_residual_kg": 0.0011723102539358116,
+      "fraction_of_resolved_movement": 0.003600245598542426,
+      "screening_status": "failed"
+    },
+    {
+      "case": "delta_dt025",
+      "maximum_dt_s": 0.025,
+      "fixed_bed_flow_spinup_s": 0,
+      "stop_time_s": 60.0,
+      "active_morphology_s": 60,
+      "inward_sediment_kg": 8.248485193741562e-15,
+      "max_cumulative_sediment_residual_kg": 0.006027164666327352,
+      "fraction_of_resolved_movement": 0.018725990362970842,
+      "screening_status": "failed"
+    },
+    {
+      "case": "delta_spinup",
+      "maximum_dt_s": 0.025,
+      "fixed_bed_flow_spinup_s": 60,
+      "stop_time_s": 120.0,
+      "active_morphology_s": 60,
+      "inward_sediment_kg": 4.372600005298565e-15,
+      "max_cumulative_sediment_residual_kg": 1.0801650293747277e-06,
+      "fraction_of_resolved_movement": 3.2114328115198067e-06,
+      "screening_status": "passed"
+    }
+  ],
+  "choices": "Explicit zero suspended and bedload inflow replaces equilibrium supply. Initial fixed-bed flow conditioning replaces the uncalibrated dry-start transient in the final experiment.",
+  "causal_limit": "The improvement supports a startup-transient diagnosis; it does not identify one source-code mechanism or establish empirical calibration.",
+  "threshold": {
+    "relative_to_resolved_mass_movement": 0.001,
+    "absolute_kg": 1e-08
+  }
+}
